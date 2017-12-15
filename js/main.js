@@ -672,29 +672,29 @@ var Player = function (_GameObject) {
         value: function update() {
             this.body.velocity.y = 0;
             this.body.velocity.x = 0;
-            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.LEFT) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.UP)) {
+            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
                 this.body.velocity.x = -150;
                 this.body.velocity.y = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.LEFT) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.DOWN)) {
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
                 this.body.velocity.x = -150;
                 this.body.velocity.y = 150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.RIGHT) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.UP)) {
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
                 this.body.velocity.x = 150;
                 this.body.velocity.y = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.RIGHT) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.DOWN)) {
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
                 this.body.velocity.x = 150;
                 this.body.velocity.y = 150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.LEFT)) {
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A)) {
                 this.body.velocity.x = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.RIGHT)) {
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D)) {
                 this.body.velocity.x = 150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.UP)) {
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
                 this.body.velocity.y = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.DOWN)) {
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
                 this.body.velocity.y = 150;
             }
 
-            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.SPACEBAR)) {
+            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.SHIFT)) {
                 this.weapon.tryToShoot();
             }
         }
