@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -117,6 +117,10 @@ var spaceArcade = {
     playerBulletsLayer: null,
     playerObjectsLayer: null,
     mainMenuLayer: null,
+
+    assestsLoaded: false,
+    gameLoadingText: 'LOADING',
+    gameLoadingTextObject: null,
 
     game: null
 };
@@ -199,21 +203,21 @@ exports.default = soundManager;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["PIXI"] = __webpack_require__(15);
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["PIXI"] = __webpack_require__(16);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["p2"] = __webpack_require__(16);
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["p2"] = __webpack_require__(17);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Phaser"] = __webpack_require__(17);
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Phaser"] = __webpack_require__(18);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
@@ -571,6 +575,44 @@ exports.default = GameObject;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = loadImages;
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function loadImages() {
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.mainMenuBackground, 'assets/img/backgrounds/mainMenu.jpg');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.space, 'assets/img/backgrounds/space.jpg');
+
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.playerBulletLevel_1, 'assets/img/bullets/playerWeakBullet.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_1, 'assets/img/bullets/enemyBulletLevel_1.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_2, 'assets/img/bullets/enemyBulletLevel_2.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_3, 'assets/img/bullets/enemyBulletLevel_3.png');
+
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_1, 'assets/img/ships/enemyShipLevel_1.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_2, 'assets/img/ships/enemyShipLevel_2.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_3, 'assets/img/ships/enemyShipLevel_3.png');
+
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.livesSprite, 'assets/img/UI/heart.png');
+}
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -664,7 +706,7 @@ var Player = function (_GameObject) {
 exports.default = Player;
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -751,7 +793,7 @@ var Enemy = function (_GameObject) {
 exports.default = Enemy;
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -769,7 +811,7 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _preload = __webpack_require__(19);
+var _preload = __webpack_require__(20);
 
 var _preload2 = _interopRequireDefault(_preload);
 
@@ -777,7 +819,7 @@ var _create = __webpack_require__(21);
 
 var _create2 = _interopRequireDefault(_create);
 
-var _update = __webpack_require__(32);
+var _update = __webpack_require__(36);
 
 var _update2 = _interopRequireDefault(_update);
 
@@ -792,7 +834,7 @@ window.addEventListener('load', function () {
 });
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -8367,7 +8409,7 @@ PIXI.TextureUvs = function()
 }).call(this);
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var require;var require;/**
@@ -22010,7 +22052,7 @@ World.prototype.raycast = function(result, ray){
 });
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -107955,10 +107997,10 @@ PIXI.canUseNewCanvasBlendModes = function () {
 * "What matters in this life is not what we do but what we do for others, the legacy we leave and the imprint we make." - Eric Meyer
 */
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -108148,7 +108190,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108167,64 +108209,14 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _loadImages = __webpack_require__(20);
+var _loadImages = __webpack_require__(12);
 
 var _loadImages2 = _interopRequireDefault(_loadImages);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function preload() {
-    (0, _loadImages2.default)();
-
-    _gameGlobalObject2.default.game.load.bitmapFont(_assetNames2.default.arcadeFontRedAndOrange, 'assets/bitmapFonts/arcadeRedAndOrange.png', 'assets/bitmapFonts/arcadeRedAndOrange.fnt');
     _gameGlobalObject2.default.game.load.bitmapFont(_assetNames2.default.arcadeFontWhite, 'assets/bitmapFonts/arcadeWhite.png', 'assets/bitmapFonts/arcadeWhite.fnt');
-
-    _gameGlobalObject2.default.game.load.spritesheet(_assetNames2.default.shipOfPlayer, 'assets/img/ships/playerSpritesheet.png', 100, 68);
-    _gameGlobalObject2.default.game.load.spritesheet(_assetNames2.default.buttonSpritesheet, 'assets/img/UI/buttonSpritesheet.png', 200, 50);
-    _gameGlobalObject2.default.game.load.spritesheet(_assetNames2.default.mediumExplosionSpriteSheet, 'assets/img/specialEffects/mediumExplosionSpritesheet.png', 100, 100);
-
-    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.musicMainTheme, 'assets/audio/arcade-music.mp3');
-    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.soundlaserBlast, 'assets/audio/LaserBlasts.mp3');
-    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.soundMediumExplosion, 'assets/audio/mediumExplosion.mp3');
-    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.soundSmallExplosion, 'assets/audio/smallExplosion.mp3');
-}
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = loadImages;
-
-var _assetNames = __webpack_require__(1);
-
-var _assetNames2 = _interopRequireDefault(_assetNames);
-
-var _gameGlobalObject = __webpack_require__(0);
-
-var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function loadImages() {
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.mainMenuBackground, 'assets/img/backgrounds/mainMenu.jpg');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.space, 'assets/img/backgrounds/space.jpg');
-
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.playerBulletLevel_1, 'assets/img/bullets/playerWeakBullet.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_1, 'assets/img/bullets/enemyBulletLevel_1.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_2, 'assets/img/bullets/enemyBulletLevel_2.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_3, 'assets/img/bullets/enemyBulletLevel_3.png');
-
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_1, 'assets/img/ships/enemyShipLevel_1.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_2, 'assets/img/ships/enemyShipLevel_2.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_3, 'assets/img/ships/enemyShipLevel_3.png');
-
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.livesSprite, 'assets/img/UI/heart.png');
 }
 
 /***/ }),
@@ -108267,26 +108259,65 @@ var _createLevels = __webpack_require__(30);
 
 var _createLevels2 = _interopRequireDefault(_createLevels);
 
+var _createAudio = __webpack_require__(32);
+
+var _createAudio2 = _interopRequireDefault(_createAudio);
+
+var _loadImages = __webpack_require__(12);
+
+var _loadImages2 = _interopRequireDefault(_loadImages);
+
+var _loadSpritesheets = __webpack_require__(33);
+
+var _loadSpritesheets2 = _interopRequireDefault(_loadSpritesheets);
+
+var _loadFonts = __webpack_require__(34);
+
+var _loadFonts2 = _interopRequireDefault(_loadFonts);
+
+var _loadAudioFiles = __webpack_require__(35);
+
+var _loadAudioFiles2 = _interopRequireDefault(_loadAudioFiles);
+
 var _soundManager = __webpack_require__(2);
 
 var _soundManager2 = _interopRequireDefault(_soundManager);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function create() {
+function initiateLoading() {
+    (0, _loadImages2.default)();
+    (0, _loadSpritesheets2.default)();
+    (0, _loadFonts2.default)();
+    (0, _loadAudioFiles2.default)();
+
+    _gameGlobalObject2.default.game.load.start();
+}
+
+function fileCompleteEventHandler(progress) {
+    _gameGlobalObject2.default.gameLoadingTextObject.text = _gameGlobalObject2.default.gameLoadingText + '\n' + progress + '%';
+}
+
+function loadCompleteEventHandler() {
+    _gameGlobalObject2.default.gameLoadingTextObject.destroy();
     (0, _createGroups2.default)();
     (0, _createBackground2.default)();
     (0, _menuCreation2.default)();
     (0, _createUI2.default)();
-
-    _soundManager2.default.sounds.mainTheme = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.musicMainTheme, 1, true);
-    _soundManager2.default.sounds.laserBlast = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundlaserBlast);
-    _soundManager2.default.sounds.explosion = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundMediumExplosion);
-    _soundManager2.default.sounds.smallExplosion = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundSmallExplosion);
-
+    (0, _createAudio2.default)();
     (0, _createLevels2.default)();
 
-    _gameGlobalObject2.default.game.paused = true;
+    _gameGlobalObject2.default.assestsLoaded = true;
+}
+
+function create() {
+    _gameGlobalObject2.default.gameLoadingTextObject = _gameGlobalObject2.default.game.add.bitmapText(_gameGlobalObject2.default.game.width / 2, _gameGlobalObject2.default.game.height / 2, _assetNames2.default.arcadeFontWhite, 'LOADING', 50);
+    _gameGlobalObject2.default.gameLoadingTextObject.anchor.setTo(0.5, 0.5);
+    _gameGlobalObject2.default.gameLoadingTextObject.align = 'center';
+
+    _gameGlobalObject2.default.game.load.onFileComplete.add(fileCompleteEventHandler, this);
+    _gameGlobalObject2.default.game.load.onLoadComplete.add(loadCompleteEventHandler, this);
+    initiateLoading();
 }
 
 /***/ }),
@@ -108321,11 +108352,11 @@ var _button = __webpack_require__(9);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _player = __webpack_require__(12);
+var _player = __webpack_require__(13);
 
 var _player2 = _interopRequireDefault(_player);
 
-var _enemy = __webpack_require__(13);
+var _enemy = __webpack_require__(14);
 
 var _enemy2 = _interopRequireDefault(_enemy);
 
@@ -108510,7 +108541,7 @@ var _weapon = __webpack_require__(7);
 
 var _weapon2 = _interopRequireDefault(_weapon);
 
-var _player = __webpack_require__(12);
+var _player = __webpack_require__(13);
 
 var _player2 = _interopRequireDefault(_player);
 
@@ -108542,6 +108573,13 @@ function startNewGame() {
     _gameGlobalObject2.default.numberOfEnemiesLeft = _gameGlobalObject2.default.numberOfEnemiesPerRound;
     _gameGlobalObject2.default.currentLevelIndex = -1;
     _gameGlobalObject2.default.numberOfEnemiesLeft = 0;
+
+    /* Fix for issue in Chrome: An AudioContext in a cross origin iframe must be
+    created or resumed from a user gesture to enable audio output. */
+    if (_gameGlobalObject2.default.game.sound.context.state === 'suspended') {
+        _gameGlobalObject2.default.game.sound.context.resume();
+        _gameGlobalObject2.default.game.sound.unlock();
+    }
 }
 
 /***/ }),
@@ -108773,6 +108811,122 @@ exports.default = GameLevel;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = createAudio;
+
+var _soundManager = __webpack_require__(2);
+
+var _soundManager2 = _interopRequireDefault(_soundManager);
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function createAudio() {
+    _soundManager2.default.sounds.mainTheme = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.musicMainTheme, 1, true);
+    _soundManager2.default.sounds.laserBlast = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundlaserBlast);
+    _soundManager2.default.sounds.explosion = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundMediumExplosion);
+    _soundManager2.default.sounds.smallExplosion = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundSmallExplosion);
+}
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = loadSpritesheets;
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function loadSpritesheets() {
+    _gameGlobalObject2.default.game.load.spritesheet(_assetNames2.default.shipOfPlayer, 'assets/img/ships/playerSpritesheet.png', 100, 68);
+    _gameGlobalObject2.default.game.load.spritesheet(_assetNames2.default.buttonSpritesheet, 'assets/img/UI/buttonSpritesheet.png', 200, 50);
+    _gameGlobalObject2.default.game.load.spritesheet(_assetNames2.default.mediumExplosionSpriteSheet, 'assets/img/specialEffects/mediumExplosionSpritesheet.png', 100, 100);
+}
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = loadFonts;
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function loadFonts() {
+    _gameGlobalObject2.default.game.load.bitmapFont(_assetNames2.default.arcadeFontRedAndOrange, 'assets/bitmapFonts/arcadeRedAndOrange.png', 'assets/bitmapFonts/arcadeRedAndOrange.fnt');
+}
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = loadAudioFiles;
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function loadAudioFiles() {
+    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.musicMainTheme, 'assets/audio/arcade-music.mp3');
+    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.soundlaserBlast, 'assets/audio/LaserBlasts.mp3');
+    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.soundMediumExplosion, 'assets/audio/mediumExplosion.mp3');
+    _gameGlobalObject2.default.game.load.audio(_assetNames2.default.soundSmallExplosion, 'assets/audio/smallExplosion.mp3');
+}
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 exports.default = update;
 
 var _gameGlobalObject = __webpack_require__(0);
@@ -108791,23 +108945,23 @@ var _gameColors = __webpack_require__(6);
 
 var _gameColors2 = _interopRequireDefault(_gameColors);
 
-var _destroyDeadGameObjects = __webpack_require__(33);
+var _destroyDeadGameObjects = __webpack_require__(37);
 
 var _destroyDeadGameObjects2 = _interopRequireDefault(_destroyDeadGameObjects);
 
-var _createEnemy = __webpack_require__(34);
+var _createEnemy = __webpack_require__(38);
 
 var _createEnemy2 = _interopRequireDefault(_createEnemy);
 
-var _activateGameEnding = __webpack_require__(35);
+var _activateGameEnding = __webpack_require__(39);
 
 var _activateGameEnding2 = _interopRequireDefault(_activateGameEnding);
 
-var _runNextLevel = __webpack_require__(37);
+var _runNextLevel = __webpack_require__(41);
 
 var _runNextLevel2 = _interopRequireDefault(_runNextLevel);
 
-var _findAndHandleCollisions = __webpack_require__(38);
+var _findAndHandleCollisions = __webpack_require__(42);
 
 var _findAndHandleCollisions2 = _interopRequireDefault(_findAndHandleCollisions);
 
@@ -108818,44 +108972,46 @@ var _button2 = _interopRequireDefault(_button);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function update() {
-    (0, _findAndHandleCollisions2.default)();
+    if (_gameGlobalObject2.default.assestsLoaded) {
+        (0, _findAndHandleCollisions2.default)();
 
-    _gameGlobalObject2.default.spaceBackground.tilePosition.y += 1;
+        _gameGlobalObject2.default.spaceBackground.tilePosition.y += 1;
 
-    _gameGlobalObject2.default.enemiesLayer.forEachDead(function (FoundDeadObject) {
-        _gameGlobalObject2.default.score += FoundDeadObject.score;
-        _gameGlobalObject2.default.scoreUIPanel.text = 'SCORE\n' + _gameGlobalObject2.default.score;
-    });
+        _gameGlobalObject2.default.enemiesLayer.forEachDead(function (FoundDeadObject) {
+            _gameGlobalObject2.default.score += FoundDeadObject.score;
+            _gameGlobalObject2.default.scoreUIPanel.text = 'SCORE\n' + _gameGlobalObject2.default.score;
+        });
 
-    if (!_gameGlobalObject2.default.gameOver && _gameGlobalObject2.default.player && !_gameGlobalObject2.default.player.alive) {
-        if (_gameGlobalObject2.default.livesIndicator.amountOfLives > 0) {
-            _gameGlobalObject2.default.livesIndicator.removeLife();
-            _gameGlobalObject2.default.player.revive();
-            _gameGlobalObject2.default.player.power = 1;
-        } else {
-            (0, _activateGameEnding2.default)('GAME OVER', _gameColors2.default.red);
-        }
-    }
-
-    if (_gameGlobalObject2.default.numberOfEnemiesLeft > 0 && _gameGlobalObject2.default.active && _gameGlobalObject2.default.game.time.now >= _gameGlobalObject2.default.nextEnemyTime) {
-        (0, _createEnemy2.default)();
-        _gameGlobalObject2.default.nextEnemyTime = _gameGlobalObject2.default.newEnemyDelay + _gameGlobalObject2.default.game.time.now;
-        _gameGlobalObject2.default.numberOfEnemiesLeft -= 1;
-    } else if (_gameGlobalObject2.default.numberOfEnemiesLeft <= 0 && _gameGlobalObject2.default.active) {
-        if (!_gameGlobalObject2.default.enemiesLayer.countLiving()) {
-            if (_gameGlobalObject2.default.currentLevelIndex <= _gameGlobalObject2.default.levels.length - 2) {
-                (0, _runNextLevel2.default)();
+        if (!_gameGlobalObject2.default.gameOver && _gameGlobalObject2.default.player && !_gameGlobalObject2.default.player.alive) {
+            if (_gameGlobalObject2.default.livesIndicator.amountOfLives > 0) {
+                _gameGlobalObject2.default.livesIndicator.removeLife();
+                _gameGlobalObject2.default.player.revive();
+                _gameGlobalObject2.default.player.power = 1;
             } else {
-                (0, _activateGameEnding2.default)('!!YOU WIN!!', _gameColors2.default.green);
+                (0, _activateGameEnding2.default)('GAME OVER', _gameColors2.default.red);
             }
         }
-    }
 
-    (0, _destroyDeadGameObjects2.default)();
+        if (_gameGlobalObject2.default.numberOfEnemiesLeft > 0 && _gameGlobalObject2.default.active && _gameGlobalObject2.default.game.time.now >= _gameGlobalObject2.default.nextEnemyTime) {
+            (0, _createEnemy2.default)();
+            _gameGlobalObject2.default.nextEnemyTime = _gameGlobalObject2.default.newEnemyDelay + _gameGlobalObject2.default.game.time.now;
+            _gameGlobalObject2.default.numberOfEnemiesLeft -= 1;
+        } else if (_gameGlobalObject2.default.numberOfEnemiesLeft <= 0 && _gameGlobalObject2.default.active) {
+            if (!_gameGlobalObject2.default.enemiesLayer.countLiving()) {
+                if (_gameGlobalObject2.default.currentLevelIndex <= _gameGlobalObject2.default.levels.length - 2) {
+                    (0, _runNextLevel2.default)();
+                } else {
+                    (0, _activateGameEnding2.default)('!!YOU WIN!!', _gameColors2.default.green);
+                }
+            }
+        }
+
+        (0, _destroyDeadGameObjects2.default)();
+    }
 }
 
 /***/ }),
-/* 33 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108891,7 +109047,7 @@ function destroyDeadGameObjects() {
 }
 
 /***/ }),
-/* 34 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108922,7 +109078,7 @@ var _weapon = __webpack_require__(7);
 
 var _weapon2 = _interopRequireDefault(_weapon);
 
-var _enemy = __webpack_require__(13);
+var _enemy = __webpack_require__(14);
 
 var _enemy2 = _interopRequireDefault(_enemy);
 
@@ -108936,7 +109092,7 @@ function createEnemy() {
 }
 
 /***/ }),
-/* 35 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108963,7 +109119,7 @@ var _gameColors = __webpack_require__(6);
 
 var _gameColors2 = _interopRequireDefault(_gameColors);
 
-var _clearGameField = __webpack_require__(36);
+var _clearGameField = __webpack_require__(40);
 
 var _clearGameField2 = _interopRequireDefault(_clearGameField);
 
@@ -109003,7 +109159,7 @@ function activateGameOver(text, textColor) {
 }
 
 /***/ }),
-/* 36 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109029,7 +109185,7 @@ function clearGameField() {
 }
 
 /***/ }),
-/* 37 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109084,7 +109240,7 @@ function runNextLevel() {
 }
 
 /***/ }),
-/* 38 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109099,7 +109255,7 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _collisionHandler = __webpack_require__(39);
+var _collisionHandler = __webpack_require__(43);
 
 var _collisionHandler2 = _interopRequireDefault(_collisionHandler);
 
@@ -109114,7 +109270,7 @@ function findAndHandleCollisions() {
 }
 
 /***/ }),
-/* 39 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
