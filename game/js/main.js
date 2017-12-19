@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -177,17 +177,6 @@ exports.default = assetNames;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _gameGlobalObject = __webpack_require__(0);
-
-var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
-
-var _assetNames = __webpack_require__(1);
-
-var _assetNames2 = _interopRequireDefault(_assetNames);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 var soundManager = {
     sounds: {
         mainTheme: null,
@@ -203,22 +192,22 @@ exports.default = soundManager;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["PIXI"] = __webpack_require__(16);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["PIXI"] = __webpack_require__(13);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["p2"] = __webpack_require__(17);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["p2"] = __webpack_require__(14);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Phaser"] = __webpack_require__(18);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Phaser"] = __webpack_require__(15);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 6 */
@@ -242,6 +231,33 @@ exports.default = colors;
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -265,7 +281,7 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _normalBullet = __webpack_require__(23);
+var _normalBullet = __webpack_require__(22);
 
 var _normalBullet2 = _interopRequireDefault(_normalBullet);
 
@@ -337,118 +353,7 @@ Weapon.fire = {
 };
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
 /* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(3);
-
-__webpack_require__(4);
-
-var _phaser = __webpack_require__(5);
-
-var _phaser2 = _interopRequireDefault(_phaser);
-
-var _assetNames = __webpack_require__(1);
-
-var _assetNames2 = _interopRequireDefault(_assetNames);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ButtonWithText = function (_Phaser$Button) {
-    _inherits(ButtonWithText, _Phaser$Button);
-
-    function ButtonWithText(text, textColorOut, textColorOver, game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame) {
-        _classCallCheck(this, ButtonWithText);
-
-        var _this = _possibleConstructorReturn(this, (ButtonWithText.__proto__ || Object.getPrototypeOf(ButtonWithText)).call(this, game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame));
-
-        var fontSize = 40;
-
-        _this.textColorOut = textColorOut;
-        _this.textColorOver = textColorOver;
-        _this.anchor.x = 0.5;
-        _this.anchor.y = 0.5;
-
-        _this.text = game.add.bitmapText(0, 0, _assetNames2.default.arcadeFontWhite, text, fontSize);
-        _this.text.tint = _this.textColorOut;
-        _this.text.anchor.x = 0.5;
-        _this.text.anchor.y = 0.5;
-        _this.text.y = fontSize * 0.17;
-        _this.addChild(_this.text);
-        _this.onInputOver.add(_this.inputOverEventHandler, _this);
-        _this.onInputOut.add(_this.inputOutEventHandler, _this);
-        _this.onInputDown.add(_this.inputDownEventHandler, _this);
-        _this.onInputUp.add(_this.inputUpEventHandler, _this);
-        return _this;
-    }
-
-    _createClass(ButtonWithText, [{
-        key: 'inputOverEventHandler',
-        value: function inputOverEventHandler() {
-            this.text.tint = this.textColorOver;
-        }
-    }, {
-        key: 'inputOutEventHandler',
-        value: function inputOutEventHandler() {
-            this.text.tint = this.textColorOut;
-        }
-    }, {
-        key: 'inputDownEventHandler',
-        value: function inputDownEventHandler() {}
-    }, {
-        key: 'inputUpEventHandler',
-        value: function inputUpEventHandler() {}
-    }]);
-
-    return ButtonWithText;
-}(_phaser2.default.Button);
-
-exports.default = ButtonWithText;
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -472,7 +377,7 @@ var GameHelpers = {
 exports.default = GameHelpers;
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -566,158 +471,96 @@ var GameObject = function (_Phaser$Sprite) {
 exports.default = GameObject;
 
 /***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(3);
+
+__webpack_require__(4);
+
+var _phaser = __webpack_require__(5);
+
+var _phaser2 = _interopRequireDefault(_phaser);
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ButtonWithText = function (_Phaser$Button) {
+    _inherits(ButtonWithText, _Phaser$Button);
+
+    function ButtonWithText(text, textColorOut, textColorOver, game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame) {
+        _classCallCheck(this, ButtonWithText);
+
+        var _this = _possibleConstructorReturn(this, (ButtonWithText.__proto__ || Object.getPrototypeOf(ButtonWithText)).call(this, game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame));
+
+        var fontSize = 40;
+
+        _this.textColorOut = textColorOut;
+        _this.textColorOver = textColorOver;
+        _this.anchor.x = 0.5;
+        _this.anchor.y = 0.5;
+
+        _this.text = game.add.bitmapText(0, 0, _assetNames2.default.arcadeFontWhite, text, fontSize);
+        _this.text.tint = _this.textColorOut;
+        _this.text.anchor.x = 0.5;
+        _this.text.anchor.y = 0.5;
+        _this.text.y = fontSize * 0.17;
+        _this.addChild(_this.text);
+        _this.onInputOver.add(_this.inputOverEventHandler, _this);
+        _this.onInputOut.add(_this.inputOutEventHandler, _this);
+        _this.onInputDown.add(_this.inputDownEventHandler, _this);
+        _this.onInputUp.add(_this.inputUpEventHandler, _this);
+        return _this;
+    }
+
+    _createClass(ButtonWithText, [{
+        key: 'inputOverEventHandler',
+        value: function inputOverEventHandler() {
+            this.text.tint = this.textColorOver;
+        }
+    }, {
+        key: 'inputOutEventHandler',
+        value: function inputOutEventHandler() {
+            this.text.tint = this.textColorOut;
+        }
+    }, {
+        key: 'inputDownEventHandler',
+        value: function inputDownEventHandler() {}
+    }, {
+        key: 'inputUpEventHandler',
+        value: function inputUpEventHandler() {}
+    }]);
+
+    return ButtonWithText;
+}(_phaser2.default.Button);
+
+exports.default = ButtonWithText;
+
+/***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = loadImages;
-
-var _assetNames = __webpack_require__(1);
-
-var _assetNames2 = _interopRequireDefault(_assetNames);
-
-var _gameGlobalObject = __webpack_require__(0);
-
-var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function loadImages() {
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.mainMenuBackground, 'assets/img/backgrounds/mainMenu.jpg');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.space, 'assets/img/backgrounds/space.jpg');
-
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.playerBulletLevel_1, 'assets/img/bullets/playerWeakBullet.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_1, 'assets/img/bullets/enemyBulletLevel_1.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_2, 'assets/img/bullets/enemyBulletLevel_2.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_3, 'assets/img/bullets/enemyBulletLevel_3.png');
-
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_1, 'assets/img/ships/enemyShipLevel_1.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_2, 'assets/img/ships/enemyShipLevel_2.png');
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_3, 'assets/img/ships/enemyShipLevel_3.png');
-
-    _gameGlobalObject2.default.game.load.image(_assetNames2.default.livesSprite, 'assets/img/UI/heart.png');
-}
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(3);
-
-__webpack_require__(4);
-
-var _phaser = __webpack_require__(5);
-
-var _phaser2 = _interopRequireDefault(_phaser);
-
-var _assetNames = __webpack_require__(1);
-
-var _assetNames2 = _interopRequireDefault(_assetNames);
-
-var _gameGlobalObject = __webpack_require__(0);
-
-var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
-
-var _soundManager = __webpack_require__(2);
-
-var _soundManager2 = _interopRequireDefault(_soundManager);
-
-var _weapon = __webpack_require__(7);
-
-var _weapon2 = _interopRequireDefault(_weapon);
-
-var _gameObject = __webpack_require__(11);
-
-var _gameObject2 = _interopRequireDefault(_gameObject);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Player = function (_GameObject) {
-    _inherits(Player, _GameObject);
-
-    function Player(power, game, xPosition, yPosition, spriteName, explosionSpritesheetName, explosionSound) {
-        _classCallCheck(this, Player);
-
-        var _this = _possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this, power, game, xPosition, yPosition, spriteName, explosionSpritesheetName, explosionSound));
-
-        _this.invulnerable = false;
-        _this.body.collideWorldBounds = true;
-
-        _this.weapon = new _weapon2.default(_weapon2.default.types.normal, _this, _this.game, _gameGlobalObject2.default.playerBulletsLayer, _soundManager2.default.sounds.laserBlast, true, _assetNames2.default.playerBulletLevel_1, 500);
-        return _this;
-    }
-
-    _createClass(Player, [{
-        key: 'update',
-        value: function update() {
-            this.body.velocity.y = 0;
-            this.body.velocity.x = 0;
-            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
-                this.body.velocity.x = -150;
-                this.body.velocity.y = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
-                this.body.velocity.x = -150;
-                this.body.velocity.y = 150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
-                this.body.velocity.x = 150;
-                this.body.velocity.y = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
-                this.body.velocity.x = 150;
-                this.body.velocity.y = 150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A)) {
-                this.body.velocity.x = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D)) {
-                this.body.velocity.x = 150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
-                this.body.velocity.y = -150;
-            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
-                this.body.velocity.y = 150;
-            }
-
-            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.SHIFT)) {
-                this.weapon.tryToShoot();
-            }
-        }
-    }]);
-
-    return Player;
-}(_gameObject2.default);
-
-exports.default = Player;
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 __webpack_require__(3);
 
 __webpack_require__(4);
@@ -730,92 +573,11 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _gameHelpers = __webpack_require__(10);
-
-var _gameHelpers2 = _interopRequireDefault(_gameHelpers);
-
-var _weapon = __webpack_require__(7);
-
-var _weapon2 = _interopRequireDefault(_weapon);
-
-var _gameObject = __webpack_require__(11);
-
-var _gameObject2 = _interopRequireDefault(_gameObject);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Enemy = function (_GameObject) {
-    _inherits(Enemy, _GameObject);
-
-    function Enemy(score, power, game, xPosition, yPosition, spriteName, weaponType, bulletAssetName, explosionSpritesheetName, explosionSound) {
-        _classCallCheck(this, Enemy);
-
-        var _this = _possibleConstructorReturn(this, (Enemy.__proto__ || Object.getPrototypeOf(Enemy)).call(this, power, game, xPosition, yPosition, spriteName, explosionSpritesheetName, explosionSound));
-
-        _this.score = score;
-        _this.xDestination = _gameHelpers2.default.getRandomInteger(0, _this.game.width);
-        _this.checkWorldBounds = true;
-
-        _this.weapon = new _weapon2.default(weaponType, _this, _this.game, _gameGlobalObject2.default.enemiesBulletsLayer, null, false, bulletAssetName, 1000);
-        return _this;
-    }
-
-    _createClass(Enemy, [{
-        key: 'update',
-        value: function update() {
-            this.y += 0.5;
-
-            if (this.x > this.xDestination) {
-                this.x -= 1;
-            } else if (this.x < this.xDestination) {
-                this.x += 1;
-            } else {
-                this.xDestination = _gameHelpers2.default.getRandomInteger(0, this.game.width);
-            }
-
-            if (this.y === 0) {
-                this.events.onOutOfBounds.add(_gameHelpers2.default.destroyObject);
-            }
-
-            this.weapon.tryToShoot();
-        }
-    }]);
-
-    return Enemy;
-}(_gameObject2.default);
-
-exports.default = Enemy;
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(3);
-
-__webpack_require__(4);
-
-var _phaser = __webpack_require__(5);
-
-var _phaser2 = _interopRequireDefault(_phaser);
-
-var _gameGlobalObject = __webpack_require__(0);
-
-var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
-
-var _preload = __webpack_require__(20);
+var _preload = __webpack_require__(17);
 
 var _preload2 = _interopRequireDefault(_preload);
 
-var _create = __webpack_require__(21);
+var _create = __webpack_require__(18);
 
 var _create2 = _interopRequireDefault(_create);
 
@@ -831,10 +593,11 @@ window.addEventListener('load', function () {
         create: _create2.default,
         update: _update2.default
     });
+    _gameGlobalObject2.default.game.preserveDrawingBuffer = true;
 });
 
 /***/ }),
-/* 16 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -8409,7 +8172,7 @@ PIXI.TextureUvs = function()
 }).call(this);
 
 /***/ }),
-/* 17 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var require;var require;/**
@@ -22052,7 +21815,7 @@ World.prototype.raycast = function(result, ray){
 });
 
 /***/ }),
-/* 18 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -107997,10 +107760,10 @@ PIXI.canUseNewCanvasBlendModes = function () {
 * "What matters in this life is not what we do but what we do for others, the legacy we leave and the imprint we make." - Eric Meyer
 */
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
-/* 19 */
+/* 16 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -108190,7 +107953,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 20 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108209,10 +107972,6 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _loadImages = __webpack_require__(12);
-
-var _loadImages2 = _interopRequireDefault(_loadImages);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function preload() {
@@ -108220,7 +107979,7 @@ function preload() {
 }
 
 /***/ }),
-/* 21 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108239,31 +107998,31 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _menuCreation = __webpack_require__(22);
+var _menuCreation = __webpack_require__(19);
 
 var _menuCreation2 = _interopRequireDefault(_menuCreation);
 
-var _createGroups = __webpack_require__(26);
+var _createGroups = __webpack_require__(25);
 
 var _createGroups2 = _interopRequireDefault(_createGroups);
 
-var _createBackground = __webpack_require__(27);
+var _createBackground = __webpack_require__(26);
 
 var _createBackground2 = _interopRequireDefault(_createBackground);
 
-var _createUI = __webpack_require__(28);
+var _createUI = __webpack_require__(27);
 
 var _createUI2 = _interopRequireDefault(_createUI);
 
-var _createLevels = __webpack_require__(30);
+var _createLevels = __webpack_require__(29);
 
 var _createLevels2 = _interopRequireDefault(_createLevels);
 
-var _createAudio = __webpack_require__(32);
+var _createAudio = __webpack_require__(31);
 
 var _createAudio2 = _interopRequireDefault(_createAudio);
 
-var _loadImages = __webpack_require__(12);
+var _loadImages = __webpack_require__(32);
 
 var _loadImages2 = _interopRequireDefault(_loadImages);
 
@@ -108278,10 +108037,6 @@ var _loadFonts2 = _interopRequireDefault(_loadFonts);
 var _loadAudioFiles = __webpack_require__(35);
 
 var _loadAudioFiles2 = _interopRequireDefault(_loadAudioFiles);
-
-var _soundManager = __webpack_require__(2);
-
-var _soundManager2 = _interopRequireDefault(_soundManager);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -108321,7 +108076,7 @@ function create() {
 }
 
 /***/ }),
-/* 22 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108340,40 +108095,27 @@ var _assetNames = __webpack_require__(1);
 
 var _assetNames2 = _interopRequireDefault(_assetNames);
 
-var _soundManager = __webpack_require__(2);
-
-var _soundManager2 = _interopRequireDefault(_soundManager);
-
 var _gameColors = __webpack_require__(6);
 
 var _gameColors2 = _interopRequireDefault(_gameColors);
 
-var _button = __webpack_require__(9);
+var _button = __webpack_require__(11);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _player = __webpack_require__(13);
-
-var _player2 = _interopRequireDefault(_player);
-
-var _enemy = __webpack_require__(14);
-
-var _enemy2 = _interopRequireDefault(_enemy);
-
-var _weapon = __webpack_require__(7);
-
-var _weapon2 = _interopRequireDefault(_weapon);
-
-var _startNewGame = __webpack_require__(25);
+var _startNewGame = __webpack_require__(20);
 
 var _startNewGame2 = _interopRequireDefault(_startNewGame);
+
+var _openLandingPage = __webpack_require__(24);
+
+var _openLandingPage2 = _interopRequireDefault(_openLandingPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function createMenu() {
     var gameTitleFontSize = 141;
     var gameTitleMarginTop = 75;
-    var buttonMarginTop = 100;
     var gameTitle = null;
 
     _gameGlobalObject2.default.mainMenuLayer = _gameGlobalObject2.default.game.add.group();
@@ -108386,11 +108128,78 @@ function createMenu() {
     gameTitle.y = gameTitle.height / 2;
     gameTitle.y += gameTitleMarginTop;
 
-    _gameGlobalObject2.default.mainMenuLayer.add(new _button2.default('NEW GAME', _gameColors2.default.lightBlue, _gameColors2.default.white, _gameGlobalObject2.default.game, _gameGlobalObject2.default.game.width / 2, gameTitle.height + gameTitleMarginTop + buttonMarginTop, _assetNames2.default.buttonSpritesheet, _startNewGame2.default, this, 0, 1));
+    _gameGlobalObject2.default.mainMenuLayer.add(new _button2.default('NEW GAME', _gameColors2.default.lightBlue, _gameColors2.default.white, _gameGlobalObject2.default.game, _gameGlobalObject2.default.game.width / 2, gameTitle.height + gameTitleMarginTop + 100, _assetNames2.default.buttonSpritesheet, _startNewGame2.default, this, 0, 1));
+
+    _gameGlobalObject2.default.mainMenuLayer.add(new _button2.default('ABOUT', _gameColors2.default.lightBlue, _gameColors2.default.white, _gameGlobalObject2.default.game, _gameGlobalObject2.default.game.width / 2, gameTitle.height + gameTitleMarginTop + 175, _assetNames2.default.buttonSpritesheet, _openLandingPage2.default, this, 0, 1));
 }
 
 /***/ }),
-/* 23 */
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = startNewGame;
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+var _soundManager = __webpack_require__(2);
+
+var _soundManager2 = _interopRequireDefault(_soundManager);
+
+var _player = __webpack_require__(21);
+
+var _player2 = _interopRequireDefault(_player);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function startNewGame() {
+    var flightAnimation = 'flight';
+    var playerMarginBottom = 0;
+
+    _gameGlobalObject2.default.mainMenuLayer.visible = false;
+
+    _gameGlobalObject2.default.player = new _player2.default(1, _gameGlobalObject2.default.game, 0, 0, _assetNames2.default.shipOfPlayer, _assetNames2.default.mediumExplosionSpriteSheet, _soundManager2.default.sounds.explosion);
+    _gameGlobalObject2.default.player.x = _gameGlobalObject2.default.config.width / 2;
+    playerMarginBottom = _gameGlobalObject2.default.player.height / 2;
+    _gameGlobalObject2.default.player.y = _gameGlobalObject2.default.config.height - playerMarginBottom;
+    _gameGlobalObject2.default.playerObjectsLayer.add(_gameGlobalObject2.default.player);
+    _gameGlobalObject2.default.player.animations.add(flightAnimation);
+    _gameGlobalObject2.default.player.animations.play(flightAnimation, 50, true);
+
+    _soundManager2.default.sounds.mainTheme.play();
+
+    _gameGlobalObject2.default.livesIndicator.restoreLives();
+
+    _gameGlobalObject2.default.score = 0;
+    _gameGlobalObject2.default.scoreUIPanel.text = 'SCORE\n0';
+    _gameGlobalObject2.default.gameOver = false;
+    _gameGlobalObject2.default.active = true;
+    _gameGlobalObject2.default.game.paused = false;
+    _gameGlobalObject2.default.numberOfEnemiesLeft = _gameGlobalObject2.default.numberOfEnemiesPerRound;
+    _gameGlobalObject2.default.currentLevelIndex = -1;
+    _gameGlobalObject2.default.numberOfEnemiesLeft = 0;
+
+    /* Fix for issue in Chrome: An AudioContext in a cross origin iframe must be
+    created or resumed from a user gesture to enable audio output. */
+    if (_gameGlobalObject2.default.game.sound.context.state === 'suspended') {
+        _gameGlobalObject2.default.game.sound.context.resume();
+        _gameGlobalObject2.default.game.sound.unlock();
+    }
+}
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108400,7 +108209,116 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _bullet = __webpack_require__(24);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(3);
+
+__webpack_require__(4);
+
+var _phaser = __webpack_require__(5);
+
+var _phaser2 = _interopRequireDefault(_phaser);
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+var _soundManager = __webpack_require__(2);
+
+var _soundManager2 = _interopRequireDefault(_soundManager);
+
+var _weapon = __webpack_require__(8);
+
+var _weapon2 = _interopRequireDefault(_weapon);
+
+var _gameObject = __webpack_require__(10);
+
+var _gameObject2 = _interopRequireDefault(_gameObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Player = function (_GameObject) {
+    _inherits(Player, _GameObject);
+
+    function Player(power, game, xPosition, yPosition, spriteName, explosionSpritesheetName, explosionSound) {
+        _classCallCheck(this, Player);
+
+        var _this = _possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this, power, game, xPosition, yPosition, spriteName, explosionSpritesheetName, explosionSound));
+
+        _this.invulnerable = false;
+        _this.body.collideWorldBounds = true;
+
+        _this.weapon = new _weapon2.default(_weapon2.default.types.normal, _this, _this.game, _gameGlobalObject2.default.playerBulletsLayer, _soundManager2.default.sounds.laserBlast, true, _assetNames2.default.playerBulletLevel_1, 500);
+        return _this;
+    }
+
+    _createClass(Player, [{
+        key: 'update',
+        value: function update() {
+            this.body.velocity.y = 0;
+            this.body.velocity.x = 0;
+            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
+                this.body.velocity.x = -150;
+                this.body.velocity.y = -150;
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
+                this.body.velocity.x = -150;
+                this.body.velocity.y = 150;
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
+                this.body.velocity.x = 150;
+                this.body.velocity.y = -150;
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D) && this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
+                this.body.velocity.x = 150;
+                this.body.velocity.y = 150;
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.A)) {
+                this.body.velocity.x = -150;
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.D)) {
+                this.body.velocity.x = 150;
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.W)) {
+                this.body.velocity.y = -150;
+            } else if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.S)) {
+                this.body.velocity.y = 150;
+            }
+
+            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.SHIFT)) {
+                this.weapon.tryToShoot();
+            }
+
+            if (this.game.input.keyboard.isDown(_phaser2.default.Keyboard.SPACEBAR) && !this.screenshot) {
+                this.screenshot = true;
+                window.open(_gameGlobalObject2.default.game.canvas.toDataURL());
+            } else {
+                this.screenshot = false;
+            }
+        }
+    }]);
+
+    return Player;
+}(_gameObject2.default);
+
+exports.default = Player;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _bullet = __webpack_require__(23);
 
 var _bullet2 = _interopRequireDefault(_bullet);
 
@@ -108433,7 +108351,7 @@ var NormalBullet = function (_Bullet) {
 exports.default = NormalBullet;
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108445,15 +108363,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(3);
-
-__webpack_require__(4);
-
-var _phaser = __webpack_require__(5);
-
-var _phaser2 = _interopRequireDefault(_phaser);
-
-var _gameHelpers = __webpack_require__(10);
+var _gameHelpers = __webpack_require__(9);
 
 var _gameHelpers2 = _interopRequireDefault(_gameHelpers);
 
@@ -108461,7 +108371,7 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _gameObject = __webpack_require__(11);
+var _gameObject = __webpack_require__(10);
 
 var _gameObject2 = _interopRequireDefault(_gameObject);
 
@@ -108510,7 +108420,7 @@ var Bullet = function (_GameObject) {
 exports.default = Bullet;
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108519,71 +108429,13 @@ exports.default = Bullet;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = startNewGame;
-
-var _gameGlobalObject = __webpack_require__(0);
-
-var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
-
-var _assetNames = __webpack_require__(1);
-
-var _assetNames2 = _interopRequireDefault(_assetNames);
-
-var _soundManager = __webpack_require__(2);
-
-var _soundManager2 = _interopRequireDefault(_soundManager);
-
-var _gameColors = __webpack_require__(6);
-
-var _gameColors2 = _interopRequireDefault(_gameColors);
-
-var _weapon = __webpack_require__(7);
-
-var _weapon2 = _interopRequireDefault(_weapon);
-
-var _player = __webpack_require__(13);
-
-var _player2 = _interopRequireDefault(_player);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function startNewGame() {
-    var flightAnimation = 'flight';
-    var playerMarginBottom = 0;
-
-    _gameGlobalObject2.default.mainMenuLayer.visible = false;
-
-    _gameGlobalObject2.default.player = new _player2.default(1, _gameGlobalObject2.default.game, 0, 0, _assetNames2.default.shipOfPlayer, _assetNames2.default.mediumExplosionSpriteSheet, _soundManager2.default.sounds.explosion);
-    _gameGlobalObject2.default.player.x = _gameGlobalObject2.default.config.width / 2;
-    playerMarginBottom = _gameGlobalObject2.default.player.height / 2;
-    _gameGlobalObject2.default.player.y = _gameGlobalObject2.default.config.height - playerMarginBottom;
-    _gameGlobalObject2.default.playerObjectsLayer.add(_gameGlobalObject2.default.player);
-    _gameGlobalObject2.default.player.animations.add(flightAnimation);
-    _gameGlobalObject2.default.player.animations.play(flightAnimation, 50, true);
-
-    _soundManager2.default.sounds.mainTheme.play();
-
-    _gameGlobalObject2.default.livesIndicator.restoreLives();
-
-    _gameGlobalObject2.default.score = 0;
-    _gameGlobalObject2.default.scoreUIPanel.text = 'SCORE\n0';
-    _gameGlobalObject2.default.gameOver = false;
-    _gameGlobalObject2.default.active = true;
-    _gameGlobalObject2.default.game.paused = false;
-    _gameGlobalObject2.default.numberOfEnemiesLeft = _gameGlobalObject2.default.numberOfEnemiesPerRound;
-    _gameGlobalObject2.default.currentLevelIndex = -1;
-    _gameGlobalObject2.default.numberOfEnemiesLeft = 0;
-
-    /* Fix for issue in Chrome: An AudioContext in a cross origin iframe must be
-    created or resumed from a user gesture to enable audio output. */
-    if (_gameGlobalObject2.default.game.sound.context.state === 'suspended') {
-        _gameGlobalObject2.default.game.sound.context.resume();
-        _gameGlobalObject2.default.game.sound.unlock();
-    }
+exports.default = openLandingPage;
+function openLandingPage() {
+    window.open('../landingPage/index.html', '_blank');
 }
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108612,7 +108464,7 @@ function createGroups() {
 }
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108640,7 +108492,7 @@ function createBackground() {
 }
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108663,7 +108515,7 @@ var _gameColors = __webpack_require__(6);
 
 var _gameColors2 = _interopRequireDefault(_gameColors);
 
-var _LivesIndicator = __webpack_require__(29);
+var _LivesIndicator = __webpack_require__(28);
 
 var _LivesIndicator2 = _interopRequireDefault(_LivesIndicator);
 
@@ -108680,7 +108532,7 @@ function createUI() {
 }
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108741,7 +108593,7 @@ var LivesIndicator = function () {
 exports.default = LivesIndicator;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108760,11 +108612,11 @@ var _assetNames = __webpack_require__(1);
 
 var _assetNames2 = _interopRequireDefault(_assetNames);
 
-var _weapon = __webpack_require__(7);
+var _weapon = __webpack_require__(8);
 
 var _weapon2 = _interopRequireDefault(_weapon);
 
-var _gameLevel = __webpack_require__(31);
+var _gameLevel = __webpack_require__(30);
 
 var _gameLevel2 = _interopRequireDefault(_gameLevel);
 
@@ -108777,7 +108629,7 @@ function createLevels() {
 }
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108802,7 +108654,7 @@ var GameLevel = function GameLevel(enemyAssetName, bulletAssetName, amount, inte
 exports.default = GameLevel;
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108832,6 +108684,44 @@ function createAudio() {
     _soundManager2.default.sounds.laserBlast = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundlaserBlast);
     _soundManager2.default.sounds.explosion = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundMediumExplosion);
     _soundManager2.default.sounds.smallExplosion = _gameGlobalObject2.default.game.add.audio(_assetNames2.default.soundSmallExplosion);
+}
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = loadImages;
+
+var _assetNames = __webpack_require__(1);
+
+var _assetNames2 = _interopRequireDefault(_assetNames);
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function loadImages() {
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.mainMenuBackground, 'assets/img/backgrounds/mainMenu.jpg');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.space, 'assets/img/backgrounds/space.jpg');
+
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.playerBulletLevel_1, 'assets/img/bullets/playerWeakBullet.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_1, 'assets/img/bullets/enemyBulletLevel_1.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_2, 'assets/img/bullets/enemyBulletLevel_2.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyBulletLevel_3, 'assets/img/bullets/enemyBulletLevel_3.png');
+
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_1, 'assets/img/ships/enemyShipLevel_1.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_2, 'assets/img/ships/enemyShipLevel_2.png');
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.enemyShipLevel_3, 'assets/img/ships/enemyShipLevel_3.png');
+
+    _gameGlobalObject2.default.game.load.image(_assetNames2.default.livesSprite, 'assets/img/UI/heart.png');
 }
 
 /***/ }),
@@ -108933,14 +108823,6 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _assetNames = __webpack_require__(1);
-
-var _assetNames2 = _interopRequireDefault(_assetNames);
-
-var _soundManager = __webpack_require__(2);
-
-var _soundManager2 = _interopRequireDefault(_soundManager);
-
 var _gameColors = __webpack_require__(6);
 
 var _gameColors2 = _interopRequireDefault(_gameColors);
@@ -108953,21 +108835,17 @@ var _createEnemy = __webpack_require__(38);
 
 var _createEnemy2 = _interopRequireDefault(_createEnemy);
 
-var _activateGameEnding = __webpack_require__(39);
+var _activateGameEnding = __webpack_require__(40);
 
 var _activateGameEnding2 = _interopRequireDefault(_activateGameEnding);
 
-var _runNextLevel = __webpack_require__(41);
+var _runNextLevel = __webpack_require__(42);
 
 var _runNextLevel2 = _interopRequireDefault(_runNextLevel);
 
-var _findAndHandleCollisions = __webpack_require__(42);
+var _findAndHandleCollisions = __webpack_require__(43);
 
 var _findAndHandleCollisions2 = _interopRequireDefault(_findAndHandleCollisions);
-
-var _button = __webpack_require__(9);
-
-var _button2 = _interopRequireDefault(_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -109062,7 +108940,7 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _gameHelpers = __webpack_require__(10);
+var _gameHelpers = __webpack_require__(9);
 
 var _gameHelpers2 = _interopRequireDefault(_gameHelpers);
 
@@ -109074,11 +108952,7 @@ var _assetNames = __webpack_require__(1);
 
 var _assetNames2 = _interopRequireDefault(_assetNames);
 
-var _weapon = __webpack_require__(7);
-
-var _weapon2 = _interopRequireDefault(_weapon);
-
-var _enemy = __webpack_require__(14);
+var _enemy = __webpack_require__(39);
 
 var _enemy2 = _interopRequireDefault(_enemy);
 
@@ -109093,6 +108967,85 @@ function createEnemy() {
 
 /***/ }),
 /* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _gameGlobalObject = __webpack_require__(0);
+
+var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
+
+var _gameHelpers = __webpack_require__(9);
+
+var _gameHelpers2 = _interopRequireDefault(_gameHelpers);
+
+var _weapon = __webpack_require__(8);
+
+var _weapon2 = _interopRequireDefault(_weapon);
+
+var _gameObject = __webpack_require__(10);
+
+var _gameObject2 = _interopRequireDefault(_gameObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Enemy = function (_GameObject) {
+    _inherits(Enemy, _GameObject);
+
+    function Enemy(score, power, game, xPosition, yPosition, spriteName, weaponType, bulletAssetName, explosionSpritesheetName, explosionSound) {
+        _classCallCheck(this, Enemy);
+
+        var _this = _possibleConstructorReturn(this, (Enemy.__proto__ || Object.getPrototypeOf(Enemy)).call(this, power, game, xPosition, yPosition, spriteName, explosionSpritesheetName, explosionSound));
+
+        _this.score = score;
+        _this.xDestination = _gameHelpers2.default.getRandomInteger(0, _this.game.width);
+        _this.checkWorldBounds = true;
+
+        _this.weapon = new _weapon2.default(weaponType, _this, _this.game, _gameGlobalObject2.default.enemiesBulletsLayer, null, false, bulletAssetName, 1000);
+        return _this;
+    }
+
+    _createClass(Enemy, [{
+        key: 'update',
+        value: function update() {
+            this.y += 0.5;
+
+            if (this.x > this.xDestination) {
+                this.x -= 1;
+            } else if (this.x < this.xDestination) {
+                this.x += 1;
+            } else {
+                this.xDestination = _gameHelpers2.default.getRandomInteger(0, this.game.width);
+            }
+
+            if (this.y === 0) {
+                this.events.onOutOfBounds.add(_gameHelpers2.default.destroyObject);
+            }
+
+            this.weapon.tryToShoot();
+        }
+    }]);
+
+    return Enemy;
+}(_gameObject2.default);
+
+exports.default = Enemy;
+
+/***/ }),
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109119,11 +109072,11 @@ var _gameColors = __webpack_require__(6);
 
 var _gameColors2 = _interopRequireDefault(_gameColors);
 
-var _clearGameField = __webpack_require__(40);
+var _clearGameField = __webpack_require__(41);
 
 var _clearGameField2 = _interopRequireDefault(_clearGameField);
 
-var _button = __webpack_require__(9);
+var _button = __webpack_require__(11);
 
 var _button2 = _interopRequireDefault(_button);
 
@@ -109159,7 +109112,7 @@ function activateGameOver(text, textColor) {
 }
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109185,7 +109138,7 @@ function clearGameField() {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109240,7 +109193,7 @@ function runNextLevel() {
 }
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109255,7 +109208,7 @@ var _gameGlobalObject = __webpack_require__(0);
 
 var _gameGlobalObject2 = _interopRequireDefault(_gameGlobalObject);
 
-var _collisionHandler = __webpack_require__(43);
+var _collisionHandler = __webpack_require__(44);
 
 var _collisionHandler2 = _interopRequireDefault(_collisionHandler);
 
@@ -109270,7 +109223,7 @@ function findAndHandleCollisions() {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
